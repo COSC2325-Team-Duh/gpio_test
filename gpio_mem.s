@@ -83,6 +83,7 @@ getMemAddr:
     ldr r0, memMsgAddr
     bl  printf
 
+@ END OF MEMORY MAPPING
 // set the pinMode
     mov r0, r5              // GPIO Address
     mov r1, #6              // pin number
@@ -102,6 +103,7 @@ getMemAddr:
     mov r1, #6
     bl gpioClr
 
+@ BEGIN MEMORY UNMAPPING
 // cleanup and exit
     mov r0, r5                  // memory to unmap
     mov r1, PAGE_SIZE           // amount we mapped
